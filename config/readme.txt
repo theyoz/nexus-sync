@@ -1,0 +1,1 @@
+This folder will be ignored by git, it's for environmental use
