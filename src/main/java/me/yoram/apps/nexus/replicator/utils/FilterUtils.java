@@ -52,25 +52,15 @@ public class FilterUtils {
                 .collect(Collectors.toCollection(ArrayList::new));
     }
 
-    public static Map<String, Component> toMapKeyIsOID(final Collection<Component> col) {
+    public static String getCoords(Component component) {
+        return String.format("%s:%s:%s", component.getGroup(), component.getName(), component.getVersion());
+
+    }
+
+    public static Map<String, Component> toMapCoordsAndComponents(final Collection<Component> col) {
         return col.parallelStream()
                 .collect(
-                        Collectors.toMap(o -> "", o -> (Component)o));
-    }
-    public static Collection<Component> differs(
-            final Collection<Component> sourceCol, final Collection<Component> destCol) {
-        return sourceCol
-                .parallelStream()
-                .filter(sourceComp -> {
-                    var destComp = destCol
-                            .parallelStream()
-                            .anyMatch(comp -> comp.getName().equals(sourceComp.getName()) &&
-                                    comp.getGroup().equals(sourceComp.getGroup()) &&
-                                    comp.getVersion().equals(sourceComp.getVersion()));
-
-                    // TODO BETTER EQUALS FOR REDEPLOY
-                    return false;
-                }).collect(Collectors.toList());
+                        Collectors.toMap(o -> getCoords(o), o -> (Component)o));
     }
 
     private FilterUtils() {}

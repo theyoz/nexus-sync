@@ -16,6 +16,7 @@ package me.yoram.apps.nexus.replicator;
 
 import me.yoram.apps.nexus.replicator.api.NexusRepositoryApi;
 import me.yoram.apps.nexus.replicator.api.NexusRepositoryFactory;
+import me.yoram.apps.nexus.replicator.exceptions.ReplicatorException;
 import me.yoram.apps.nexus.replicator.nexus.DryRunNexusService;
 import me.yoram.apps.nexus.replicator.nexus.NexusService;
 import me.yoram.apps.nexus.replicator.config.Config;
@@ -24,10 +25,13 @@ import me.yoram.apps.nexus.replicator.api.ConfiguratorFactory;
 import me.yoram.apps.nexus.replicator.dto.Asset;
 import me.yoram.apps.nexus.replicator.dto.Component;
 import me.yoram.apps.nexus.replicator.exceptions.ConfigException;
+import me.yoram.apps.nexus.replicator.utils.FilterUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Date;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * @author Yoram Halberstam (yoram dot halberstam at gmail dot com)
@@ -99,22 +103,37 @@ public class Replicator {
                 user, pass, "https://nexus.open-esb.net/service/rest/v1/components?repository=maven-releases");*/
 
         NexusRepositoryApi api = NexusRepositoryFactory.getInstance();
-        var res = api.getAllComponents(config.getSource());
+        var sourceComponents = api.getAllComponents(config.getSource());
+        var destComponents = api.getAllComponents(config.getDest());
 
-        int count = 1;
-        for (Component c: res.getItems()) {
-            if (LOG.isDebugEnabled()) {
-                LOG.debug(String.format("Uploading component %d/%d", count++, res.getItems().size()));
+        final var sourceMap = FilterUtils.toMapCoordsAndComponents(sourceComponents.getItems());
+        final var destMap = FilterUtils.toMapCoordsAndComponents(destComponents.getItems());
+        final var missing = sourceMap.entrySet().stream()
+                .filter(entry -> !destMap.containsKey(entry.getKey()))
+                .collect(Collectors.toMap(o -> o.getKey(), o -> o.getValue()));
+
+        if (missing.size() == 0) {
+            LOG.info(String.format("Destination %s is up to date", config.getDest().getUrlConfig().prefixUrl()));
+        } else {
+            final var ints = new int[] {0, 0};
+            missing.values().parallelStream().forEach(component -> {
+                ints[0] = ints[0] + 1;
+
+                if (LOG.isDebugEnabled()) {
+                    LOG.debug(String.format("Uploading component %d/%d", ints[0], sourceComponents.getItems().size()));
+                }
+
+                try {
+                    api.upload(config.getSource(), config.getDest(), component);
+                } catch (Throwable t) {
+                    LOG.error(t.getMessage(), t);
+                    ints[1] = ints[1] + 1;
+                }
+            });
+
+            if (ints[1] != 0) {
+                throw new ReplicatorException(String.format("There has been %d upload errors", ints[1]));
             }
-
-            api.upload(config.getSource(), config.getDest(), c);
         }
-
-        //NexusService.getInstance().upload(user2, pass2, "https://nexus.backup.yoram.me/service/rest/v1/components?repository=maven-releases", cp, asset);
-        //NexusService.getInstance().upload(user2, pass2, "http://localhost:8089/service/rest/v1/components?repository=maven-releases", cp, asset);
-        //NexusService.getInstance().upload(user2, pass2, "http://localhost:8081/service/rest/v1/components?repository=maven-releases", cp, asset);
-        //api.upload(config.getSource(), config.getDest(), cp);
-        System.out.println(res);
-        System.out.println(new Date().toString());
     }
 }

@@ -1,0 +1,477 @@
+{
+  "items": [
+    {
+      "id": "bWF2ZW4tcmVsZWFzZXM6ODg0OTFjZDFkMTg1ZGQxMzJhMDM2YzNmY2VkNWRjNTE",
+      "repository": "maven-releases",
+      "format": "maven2",
+      "group": "net.open-esb.core",
+      "name": "ri-clients",
+      "version": "3.1.0",
+      "assets": [
+        {
+          "instance": {
+            "downloadUrl": "http://localhost:8081/repository/maven-releases/net/open-esb/core/ri-clients/3.1.0/ri-clients-3.1.0.pom",
+            "path": "net/open-esb/core/ri-clients/3.1.0/ri-clients-3.1.0.pom",
+            "id": "bWF2ZW4tcmVsZWFzZXM6MjEwMzFkZmFmNDVlNWI1ODcxMGY0OTdlMjQzYjY4NWI",
+            "repository": "maven-releases",
+            "format": "maven2",
+            "checksum": {
+              "md5": "bbeef8a15f250a5239d186963f692ed4",
+              "sha1": "e2222ff782171258ac59203140cff217638cf7ba"
+            }
+          },
+          "extension": "pom"
+        }
+      ]
+    },
+    {
+      "id": "bWF2ZW4tcmVsZWFzZXM6ODg0OTFjZDFkMTg1ZGQxMzNlMTE0MmZiZWFmNjVjODY",
+      "repository": "maven-releases",
+      "format": "maven2",
+      "group": "com.sun.encoder",
+      "name": "hl7encoder-xsdextension",
+      "version": "1.0",
+      "assets": [
+        {
+          "instance": {
+            "downloadUrl": "http://localhost:8081/repository/maven-releases/com/sun/encoder/hl7encoder-xsdextension/1.0/hl7encoder-xsdextension-1.0.jar",
+            "path": "com/sun/encoder/hl7encoder-xsdextension/1.0/hl7encoder-xsdextension-1.0.jar",
+            "id": "bWF2ZW4tcmVsZWFzZXM6ZTAxODhlZDA3MjhmYTY4ZmMyY2Y2YmZlN2RlOTAzNGI",
+            "repository": "maven-releases",
+            "format": "maven2",
+            "checksum": {
+              "md5": "a9fe04d0e958283a1daf4eb2dee5cd35",
+              "sha1": "50a0e1adbff6e4ddab09aca9dab26ceefa3ae3ad"
+            }
+          },
+          "extension": "jar"
+        },
+        {
+          "instance": {
+            "downloadUrl": "http://localhost:8081/repository/maven-releases/com/sun/encoder/hl7encoder-xsdextension/1.0/hl7encoder-xsdextension-1.0.pom",
+            "path": "com/sun/encoder/hl7encoder-xsdextension/1.0/hl7encoder-xsdextension-1.0.pom",
+            "id": "bWF2ZW4tcmVsZWFzZXM6Zjg5OGIzOTAzY2I5OWM1OTBkNmQyNjQwNWZkNDkwY2Q",
+            "repository": "maven-releases",
+            "format": "maven2",
+            "checksum": {
+              "md5": "40fed189645836e61594bf45416b3e5d",
+              "sha1": "0092feb2767bf481a7e7066cfc88dcd1651070e0"
+            }
+          },
+          "extension": "pom"
+        }
+      ]
+    },
+    {
+      "id": "bWF2ZW4tcmVsZWFzZXM6ODg0OTFjZDFkMTg1ZGQxM2VlYzQ3Yzk3MGI2YWQyOTE",
+      "repository": "maven-releases",
+      "format": "maven2",
+      "group": "net.open-esb.components",
+      "name": "filebc-installer",
+      "version": "3.0.10",
+      "assets": [
+        {
+          "instance": {
+            "downloadUrl": "http://localhost:8081/repository/maven-releases/net/open-esb/components/filebc-installer/3.0.10/filebc-installer-3.0.10.jar",
+            "path": "net/open-esb/components/filebc-installer/3.0.10/filebc-installer-3.0.10.jar",
+            "id": "bWF2ZW4tcmVsZWFzZXM6NTgxODAwNWRlMmViMmJkMTQ4NTAxZWM4M2FlMzA4ZTg",
+            "repository": "maven-releases",
+            "format": "maven2",
+            "checksum": {
+              "md5": "5bfda246a8ac417e48ff846c861fcdcd",
+              "sha1": "90e3b76a63bc50e9cc5b64719559e194b181bf67"
+            }
+          },
+          "extension": "jar"
+        },
+        {
+          "instance": {
+            "downloadUrl": "http://localhost:8081/repository/maven-releases/net/open-esb/components/filebc-installer/3.0.10/filebc-installer-3.0.10.pom",
+            "path": "net/open-esb/components/filebc-installer/3.0.10/filebc-installer-3.0.10.pom",
+            "id": "bWF2ZW4tcmVsZWFzZXM6ZTAxODhlZDA3MjhmYTY4ZjU2MzM5YmUzZTFjODk2ZTg",
+            "repository": "maven-releases",
+            "format": "maven2",
+            "checksum": {
+              "md5": "0dc407398c2280bacd8e8166b67ca74b",
+              "sha1": "0823da056ca8cc9f50f1101f7cbf7eb4b4770d50"
+            }
+          },
+          "extension": "pom"
+        }
+      ]
+    },
+    {
+      "id": "bWF2ZW4tcmVsZWFzZXM6ODg0OTFjZDFkMTg1ZGQxM2YyNjUyZDU3MWMwZGJjMzE",
+      "repository": "maven-releases",
+      "format": "maven2",
+      "group": "net.open-esb.components",
+      "name": "xsdmodel",
+      "version": "3.0.11",
+      "assets": [
+        {
+          "instance": {
+            "downloadUrl": "http://localhost:8081/repository/maven-releases/net/open-esb/components/xsdmodel/3.0.11/xsdmodel-3.0.11-javadoc.jar",
+            "path": "net/open-esb/components/xsdmodel/3.0.11/xsdmodel-3.0.11-javadoc.jar",
+            "id": "bWF2ZW4tcmVsZWFzZXM6NjU0YmI3ZDBhNTkyMTM4NWJhZDllZDVlNzZkOTU0NTc",
+            "repository": "maven-releases",
+            "format": "maven2",
+            "checksum": {
+              "md5": "a8b3ab79cf39f2ef1b1aa1e0d803b5bd",
+              "sha1": "4f9554b9d5d3c8c976fc66041042e30f2535b135"
+            }
+          },
+          "classifier": "javadoc",
+          "extension": "jar"
+        },
+        {
+          "instance": {
+            "downloadUrl": "http://localhost:8081/repository/maven-releases/net/open-esb/components/xsdmodel/3.0.11/xsdmodel-3.0.11-sources.jar",
+            "path": "net/open-esb/components/xsdmodel/3.0.11/xsdmodel-3.0.11-sources.jar",
+            "id": "bWF2ZW4tcmVsZWFzZXM6MjEwMzFkZmFmNDVlNWI1OGQ4Y2FkY2YzMTY0NjdhZDY",
+            "repository": "maven-releases",
+            "format": "maven2",
+            "checksum": {
+              "md5": "703f9b3c89c554f945598270cdccc335",
+              "sha1": "25f3864506e81f908ccda9c9ba8bdc82749fe1c9"
+            }
+          },
+          "classifier": "sources",
+          "extension": "jar"
+        },
+        {
+          "instance": {
+            "downloadUrl": "http://localhost:8081/repository/maven-releases/net/open-esb/components/xsdmodel/3.0.11/xsdmodel-3.0.11.jar",
+            "path": "net/open-esb/components/xsdmodel/3.0.11/xsdmodel-3.0.11.jar",
+            "id": "bWF2ZW4tcmVsZWFzZXM6ZDA2NDgwNGE4ZWQ1YWQ2ZWE4NTNmZWY3ZWJjYWFlODI",
+            "repository": "maven-releases",
+            "format": "maven2",
+            "checksum": {
+              "md5": "6a35f50e342c90da5899d1e87fab65b6",
+              "sha1": "22e3fe2aff8cdc867c2d450f572099741a406639"
+            }
+          },
+          "extension": "jar"
+        },
+        {
+          "instance": {
+            "downloadUrl": "http://localhost:8081/repository/maven-releases/net/open-esb/components/xsdmodel/3.0.11/xsdmodel-3.0.11.pom",
+            "path": "net/open-esb/components/xsdmodel/3.0.11/xsdmodel-3.0.11.pom",
+            "id": "bWF2ZW4tcmVsZWFzZXM6M2Y1Y2FlMDE3NjAyMzNiNjE0NWM3NThjZjMxNDliYWI",
+            "repository": "maven-releases",
+            "format": "maven2",
+            "checksum": {
+              "md5": "a6c9c01d081c012e2befb85dc8e43392",
+              "sha1": "dbb06cf2cff14a9ee5d070573cb3479693311ff8"
+            }
+          },
+          "extension": "pom"
+        }
+      ]
+    },
+    {
+      "id": "bWF2ZW4tcmVsZWFzZXM6ODg0OTFjZDFkMTg1ZGQxM2Q2OTg0MGQ2YTZjZTBjMGU",
+      "repository": "maven-releases",
+      "format": "maven2",
+      "group": "net.open-esb.components",
+      "name": "restbc3-components-jbiadapter",
+      "version": "3.0.11",
+      "assets": [
+        {
+          "instance": {
+            "downloadUrl": "http://localhost:8081/repository/maven-releases/net/open-esb/components/restbc3-components-jbiadapter/3.0.11/restbc3-components-jbiadapter-3.0.11-javadoc.jar",
+            "path": "net/open-esb/components/restbc3-components-jbiadapter/3.0.11/restbc3-components-jbiadapter-3.0.11-javadoc.jar",
+            "id": "bWF2ZW4tcmVsZWFzZXM6ZDA2NDgwNGE4ZWQ1YWQ2ZWYwNjZmMTQ4ZDU5Y2E4YjU",
+            "repository": "maven-releases",
+            "format": "maven2",
+            "checksum": {
+              "md5": "cb24f55be678ae583741aae98ea4eaf8",
+              "sha1": "7f2190df84dab15895eb8a4f79501600f4f441ba"
+            }
+          },
+          "classifier": "javadoc",
+          "extension": "jar"
+        },
+        {
+          "instance": {
+            "downloadUrl": "http://localhost:8081/repository/maven-releases/net/open-esb/components/restbc3-components-jbiadapter/3.0.11/restbc3-components-jbiadapter-3.0.11-sources.jar",
+            "path": "net/open-esb/components/restbc3-components-jbiadapter/3.0.11/restbc3-components-jbiadapter-3.0.11-sources.jar",
+            "id": "bWF2ZW4tcmVsZWFzZXM6M2Y1Y2FlMDE3NjAyMzNiNmZlZjY3MDA4MzdjMGFkMzk",
+            "repository": "maven-releases",
+            "format": "maven2",
+            "checksum": {
+              "md5": "d6c8585d5d910b0e7f3a046602868cde",
+              "sha1": "0c81fb7bea4775881010513a7f6de321ed87d938"
+            }
+          },
+          "classifier": "sources",
+          "extension": "jar"
+        },
+        {
+          "instance": {
+            "downloadUrl": "http://localhost:8081/repository/maven-releases/net/open-esb/components/restbc3-components-jbiadapter/3.0.11/restbc3-components-jbiadapter-3.0.11.jar",
+            "path": "net/open-esb/components/restbc3-components-jbiadapter/3.0.11/restbc3-components-jbiadapter-3.0.11.jar",
+            "id": "bWF2ZW4tcmVsZWFzZXM6NTgxODAwNWRlMmViMmJkMTMzNjZkN2ExM2ZiNjUzOGQ",
+            "repository": "maven-releases",
+            "format": "maven2",
+            "checksum": {
+              "md5": "5309954f8da5ce3f9dca5df05fd68e9f",
+              "sha1": "6ceaa1620e1e6cd661bc12cd5b7e650ea1613a31"
+            }
+          },
+          "extension": "jar"
+        },
+        {
+          "instance": {
+            "downloadUrl": "http://localhost:8081/repository/maven-releases/net/open-esb/components/restbc3-components-jbiadapter/3.0.11/restbc3-components-jbiadapter-3.0.11.pom",
+            "path": "net/open-esb/components/restbc3-components-jbiadapter/3.0.11/restbc3-components-jbiadapter-3.0.11.pom",
+            "id": "bWF2ZW4tcmVsZWFzZXM6ZTAxODhlZDA3MjhmYTY4ZjM0YTlhY2JkNzdkMTU2MjM",
+            "repository": "maven-releases",
+            "format": "maven2",
+            "checksum": {
+              "md5": "fe8215666b3ad539e5dd1f452848c995",
+              "sha1": "16f2ead42ff7fd7cf1bd12e4ea61043a9a00d2b9"
+            }
+          },
+          "extension": "pom"
+        }
+      ]
+    },
+    {
+      "id": "bWF2ZW4tcmVsZWFzZXM6ODg0OTFjZDFkMTg1ZGQxMzQwZWUxY2Q5MTlmZGRkM2U",
+      "repository": "maven-releases",
+      "format": "maven2",
+      "group": "net.open-esb.components",
+      "name": "common-util",
+      "version": "3.1.1-beta",
+      "assets": [
+        {
+          "instance": {
+            "downloadUrl": "http://localhost:8081/repository/maven-releases/net/open-esb/components/common-util/3.1.1-beta/common-util-3.1.1-beta-javadoc.jar",
+            "path": "net/open-esb/components/common-util/3.1.1-beta/common-util-3.1.1-beta-javadoc.jar",
+            "id": "bWF2ZW4tcmVsZWFzZXM6YmI2YzZlZjk3OTZkYWM4Mzk3OGY2YjZkYzI0YjU1ZGI",
+            "repository": "maven-releases",
+            "format": "maven2",
+            "checksum": {
+              "md5": "416f4c63a0a999f8bc8ba1397dda4e92",
+              "sha1": "112b2451777d78cf36c77655b9a4ce730a4c7c13"
+            }
+          },
+          "classifier": "javadoc",
+          "extension": "jar"
+        },
+        {
+          "instance": {
+            "downloadUrl": "http://localhost:8081/repository/maven-releases/net/open-esb/components/common-util/3.1.1-beta/common-util-3.1.1-beta-sources.jar",
+            "path": "net/open-esb/components/common-util/3.1.1-beta/common-util-3.1.1-beta-sources.jar",
+            "id": "bWF2ZW4tcmVsZWFzZXM6NjU0YmI3ZDBhNTkyMTM4NTg5NTJiMWRjNmFkZTFlMTI",
+            "repository": "maven-releases",
+            "format": "maven2",
+            "checksum": {
+              "md5": "c4a29ea09dc3f99f339b3ac999fd7b15",
+              "sha1": "fc9b96f88c6f4de4cf88dde9f30bc648b8d9e984"
+            }
+          },
+          "classifier": "sources",
+          "extension": "jar"
+        },
+        {
+          "instance": {
+            "downloadUrl": "http://localhost:8081/repository/maven-releases/net/open-esb/components/common-util/3.1.1-beta/common-util-3.1.1-beta.jar",
+            "path": "net/open-esb/components/common-util/3.1.1-beta/common-util-3.1.1-beta.jar",
+            "id": "bWF2ZW4tcmVsZWFzZXM6MjEwMzFkZmFmNDVlNWI1ODE2NjNjNzk0YjhhMmE4NzI",
+            "repository": "maven-releases",
+            "format": "maven2",
+            "checksum": {
+              "md5": "9e74d182735e0c2804861d598a59ad71",
+              "sha1": "0475b8cfb92662c1c3466efd633a81a624f45598"
+            }
+          },
+          "extension": "jar"
+        },
+        {
+          "instance": {
+            "downloadUrl": "http://localhost:8081/repository/maven-releases/net/open-esb/components/common-util/3.1.1-beta/common-util-3.1.1-beta.pom",
+            "path": "net/open-esb/components/common-util/3.1.1-beta/common-util-3.1.1-beta.pom",
+            "id": "bWF2ZW4tcmVsZWFzZXM6ZDA2NDgwNGE4ZWQ1YWQ2ZTVmOTE5NjFmZTNiMzI1NzY",
+            "repository": "maven-releases",
+            "format": "maven2",
+            "checksum": {
+              "md5": "b913817243615a872b806e6bf3063e13",
+              "sha1": "a2eb413053c1666119ef195a3069ad8ab3e22775"
+            }
+          },
+          "extension": "pom"
+        }
+      ]
+    },
+    {
+      "id": "bWF2ZW4tcmVsZWFzZXM6ODg0OTFjZDFkMTg1ZGQxMzY5YmFmMjljNGQzYWNkYzI",
+      "repository": "maven-releases",
+      "format": "maven2",
+      "group": "net.open-esb.components",
+      "name": "pojose-components-jbiadapter",
+      "version": "3.1.1-beta",
+      "assets": [
+        {
+          "instance": {
+            "downloadUrl": "http://localhost:8081/repository/maven-releases/net/open-esb/components/pojose-components-jbiadapter/3.1.1-beta/pojose-components-jbiadapter-3.1.1-beta-javadoc.jar",
+            "path": "net/open-esb/components/pojose-components-jbiadapter/3.1.1-beta/pojose-components-jbiadapter-3.1.1-beta-javadoc.jar",
+            "id": "bWF2ZW4tcmVsZWFzZXM6MjEwMzFkZmFmNDVlNWI1OGU4M2JiOGU5ODdhNzA0MWM",
+            "repository": "maven-releases",
+            "format": "maven2",
+            "checksum": {
+              "md5": "950a5d83c86ed26460a1c0ab25ed4d62",
+              "sha1": "f99665527e6eb1c15cfe5395344fef41d5abb8b5"
+            }
+          },
+          "classifier": "javadoc",
+          "extension": "jar"
+        },
+        {
+          "instance": {
+            "downloadUrl": "http://localhost:8081/repository/maven-releases/net/open-esb/components/pojose-components-jbiadapter/3.1.1-beta/pojose-components-jbiadapter-3.1.1-beta-sources.jar",
+            "path": "net/open-esb/components/pojose-components-jbiadapter/3.1.1-beta/pojose-components-jbiadapter-3.1.1-beta-sources.jar",
+            "id": "bWF2ZW4tcmVsZWFzZXM6ZDA2NDgwNGE4ZWQ1YWQ2ZWE2N2MzMTM4MWM1MDNkZjA",
+            "repository": "maven-releases",
+            "format": "maven2",
+            "checksum": {
+              "md5": "17d330084bbf0f019fe8d780e11e5494",
+              "sha1": "4d5828e2522473b6c27640754d0b554d3a6e5ca2"
+            }
+          },
+          "classifier": "sources",
+          "extension": "jar"
+        },
+        {
+          "instance": {
+            "downloadUrl": "http://localhost:8081/repository/maven-releases/net/open-esb/components/pojose-components-jbiadapter/3.1.1-beta/pojose-components-jbiadapter-3.1.1-beta.jar",
+            "path": "net/open-esb/components/pojose-components-jbiadapter/3.1.1-beta/pojose-components-jbiadapter-3.1.1-beta.jar",
+            "id": "bWF2ZW4tcmVsZWFzZXM6M2Y1Y2FlMDE3NjAyMzNiNjg0OWE2NGJjZmFiZjM5Y2M",
+            "repository": "maven-releases",
+            "format": "maven2",
+            "checksum": {
+              "md5": "d2c165c8f35f3f8c980a9031ffdcec14",
+              "sha1": "c0fac81a620c37ad294b511b2bb9bc603411aea6"
+            }
+          },
+          "extension": "jar"
+        },
+        {
+          "instance": {
+            "downloadUrl": "http://localhost:8081/repository/maven-releases/net/open-esb/components/pojose-components-jbiadapter/3.1.1-beta/pojose-components-jbiadapter-3.1.1-beta.pom",
+            "path": "net/open-esb/components/pojose-components-jbiadapter/3.1.1-beta/pojose-components-jbiadapter-3.1.1-beta.pom",
+            "id": "bWF2ZW4tcmVsZWFzZXM6NTgxODAwNWRlMmViMmJkMTc5NThkYmVkZGI1NmQyYmY",
+            "repository": "maven-releases",
+            "format": "maven2",
+            "checksum": {
+              "md5": "e20793b80b29647ad264a7b9229a9bf0",
+              "sha1": "9a502529b7e4faf5ffe82a72490847408df7c5ef"
+            }
+          },
+          "extension": "pom"
+        }
+      ]
+    },
+    {
+      "id": "bWF2ZW4tcmVsZWFzZXM6ODg0OTFjZDFkMTg1ZGQxMzRhOTEzM2Y2ZWQwM2EzZDA",
+      "repository": "maven-releases",
+      "format": "maven2",
+      "group": "net.open-esb.core",
+      "name": "jbi-ext",
+      "version": "3.1.1",
+      "assets": [
+        {
+          "instance": {
+            "downloadUrl": "http://localhost:8081/repository/maven-releases/net/open-esb/core/jbi-ext/3.1.1/jbi-ext-3.1.1-sources.jar",
+            "path": "net/open-esb/core/jbi-ext/3.1.1/jbi-ext-3.1.1-sources.jar",
+            "id": "bWF2ZW4tcmVsZWFzZXM6ZDA2NDgwNGE4ZWQ1YWQ2ZWUxNTVmOTAzZDQ1MzBjMWM",
+            "repository": "maven-releases",
+            "format": "maven2",
+            "checksum": {
+              "md5": "f7801f4a108af69fcd7faf253ff669ea",
+              "sha1": "b865d37fef97b3e074de5688ae2251062784824b"
+            }
+          },
+          "classifier": "sources",
+          "extension": "jar"
+        },
+        {
+          "instance": {
+            "downloadUrl": "http://localhost:8081/repository/maven-releases/net/open-esb/core/jbi-ext/3.1.1/jbi-ext-3.1.1.jar",
+            "path": "net/open-esb/core/jbi-ext/3.1.1/jbi-ext-3.1.1.jar",
+            "id": "bWF2ZW4tcmVsZWFzZXM6M2Y1Y2FlMDE3NjAyMzNiNjM1MmQ2ZGQyZTdmMGI3MTg",
+            "repository": "maven-releases",
+            "format": "maven2",
+            "checksum": {
+              "md5": "7fd6a14b013fc9a5979a3e5a0fa7fa14",
+              "sha1": "bb1566299919c69fb4be0f1eb3f9beb5ef929fd8"
+            }
+          },
+          "extension": "jar"
+        },
+        {
+          "instance": {
+            "downloadUrl": "http://localhost:8081/repository/maven-releases/net/open-esb/core/jbi-ext/3.1.1/jbi-ext-3.1.1.pom",
+            "path": "net/open-esb/core/jbi-ext/3.1.1/jbi-ext-3.1.1.pom",
+            "id": "bWF2ZW4tcmVsZWFzZXM6NTgxODAwNWRlMmViMmJkMTg4MGE0MDk0NDI5OTRiNDY",
+            "repository": "maven-releases",
+            "format": "maven2",
+            "checksum": {
+              "md5": "e6f6a396914b4d431f91850ca892c029",
+              "sha1": "4036d1f1d9f0960e2e6de63b978dd4f062e80103"
+            }
+          },
+          "extension": "pom"
+        }
+      ]
+    },
+    {
+      "id": "bWF2ZW4tcmVsZWFzZXM6ODg0OTFjZDFkMTg1ZGQxMzFiM2I1NjJlYTliMmJjYmQ",
+      "repository": "maven-releases",
+      "format": "maven2",
+      "group": "net.open-esb.components",
+      "name": "jmsbc",
+      "version": "3.1.1",
+      "assets": [
+        {
+          "instance": {
+            "downloadUrl": "http://localhost:8081/repository/maven-releases/net/open-esb/components/jmsbc/3.1.1/jmsbc-3.1.1.pom",
+            "path": "net/open-esb/components/jmsbc/3.1.1/jmsbc-3.1.1.pom",
+            "id": "bWF2ZW4tcmVsZWFzZXM6YmI2YzZlZjk3OTZkYWM4MzQwMjQ3YjVkYjI4YmQ0N2Q",
+            "repository": "maven-releases",
+            "format": "maven2",
+            "checksum": {
+              "md5": "77767fc52b3e68f6279277f272dadb61",
+              "sha1": "c2f1674bd262a5d93523908bfbe2121db8509845"
+            }
+          },
+          "extension": "pom"
+        }
+      ]
+    },
+    {
+      "id": "bWF2ZW4tcmVsZWFzZXM6ODg0OTFjZDFkMTg1ZGQxM2NhMzdiYTlkOWFkNDJiM2Y",
+      "repository": "maven-releases",
+      "format": "maven2",
+      "group": "net.open-esb.core",
+      "name": "test-components",
+      "version": "3.1.2",
+      "assets": [
+        {
+          "instance": {
+            "downloadUrl": "http://localhost:8081/repository/maven-releases/net/open-esb/core/test-components/3.1.2/test-components-3.1.2.pom",
+            "path": "net/open-esb/core/test-components/3.1.2/test-components-3.1.2.pom",
+            "id": "bWF2ZW4tcmVsZWFzZXM6NjU0YmI3ZDBhNTkyMTM4NWE4MmMyZDRhYTNiMGIyMjk",
+            "repository": "maven-releases",
+            "format": "maven2",
+            "checksum": {
+              "md5": "31e298f9af0e6e23d40d76af34ce54d1",
+              "sha1": "b572c440f5d1bc22d2555c7e2d13f46c930477d1"
+            }
+          },
+          "extension": "pom"
+        }
+      ]
+    }
+  ]
+}

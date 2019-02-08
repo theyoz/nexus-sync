@@ -14,13 +14,15 @@
  */
 package me.yoram.apps.nexus.replicator.dto;
 
+import me.yoram.apps.nexus.replicator.api.Bean;
+
 import java.util.Collection;
 
 /**
  * @author Yoram Halberstam (yoram dot halberstam at gmail dot com)
  * @since 05/02/19
  */
-public class ListComponentResponse {
+public class ListComponentResponse extends Bean {
     private Collection<Component> items;
     private String continuationToken;
 

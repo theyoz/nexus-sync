@@ -14,14 +14,26 @@
  */
 package me.yoram.apps.nexus.replicator.utils;
 
+import com.google.gson.Gson;
+import me.yoram.apps.nexus.replicator.api.NexusRepositoryFactory;
+import me.yoram.apps.nexus.replicator.config.Config;
+import me.yoram.apps.nexus.replicator.config.Credentials;
+import me.yoram.apps.nexus.replicator.config.Node;
+import me.yoram.apps.nexus.replicator.config.UrlConfig;
 import me.yoram.apps.nexus.replicator.dto.Asset;
 import me.yoram.apps.nexus.replicator.dto.Component;
 import me.yoram.apps.nexus.replicator.dto.DecoratedAsset;
+import me.yoram.apps.nexus.replicator.dto.ListComponentResponse;
+import me.yoram.apps.nexus.replicator.nexus.NexusService;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Map;
 
 /**
  * @author Yoram Halberstam (yoram dot halberstam at gmail dot com)
@@ -77,4 +89,49 @@ public class TestFilterUtils {
                     String.format("Collection\n%sExpected to contain\n%s", res, asset.getDownloadUrl());
         }
     }
+
+    @Test
+    public void testGetCoords() {
+        String res = FilterUtils.getCoords(new Component().group("aa").name("bb").version("11"));
+
+        assert "aa:bb:11".equals(res) : String.format("Expected aa:bb:11 but %s returned", res);
+    }
+
+    @Test
+    public void testToMapCoordsAndComponents() throws Exception {
+        ListComponentResponse res;
+
+        try (final InputStream in = TestFilterUtils.class.getResourceAsStream("/json/ListComponentResponse/01.json")) {
+            res = new Gson().fromJson(new InputStreamReader(in), ListComponentResponse.class);
+        }
+
+        Map<String, Component> map = FilterUtils.toMapCoordsAndComponents(res.getItems());
+
+        final Collection<String> expectedKeys = new ArrayList<>(
+                Arrays.asList(
+                        "net.open-esb.components:jmsbc:3.1.1",
+                        "net.open-esb.components:xsdmodel:3.0.11",
+                        "net.open-esb.core:test-components:3.1.2",
+                        "net.open-esb.core:ri-clients:3.1.0",
+                        "net.open-esb.components:filebc-installer:3.0.10",
+                        "net.open-esb.core:jbi-ext:3.1.1",
+                        "net.open-esb.components:restbc3-components-jbiadapter:3.0.11",
+                        "net.open-esb.components:pojose-components-jbiadapter:3.1.1-beta",
+                        "net.open-esb.components:common-util:3.1.1-beta",
+                        "com.sun.encoder:hl7encoder-xsdextension:1.0"));
+
+        for (Map.Entry<String, Component> entry: map.entrySet()) {
+            String coords = FilterUtils.getCoords(entry.getValue());
+
+            assert entry.getKey().equals(coords) : String.format(
+                    "Entry coordinate (the key) should be %s but component inside is %s", entry.getKey(), coords);
+
+            assert expectedKeys.contains(entry.getKey()) : String.format("Coordinqtes %s not expected", entry.getKey());
+
+            expectedKeys.remove(entry.getKey());
+        }
+
+        assert expectedKeys.size() == 0 : String.format("Entries not found but expected: %s", expectedKeys);
+    }
+
 }
