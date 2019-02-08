@@ -20,6 +20,7 @@ import me.yoram.apps.nexus.replicator.dto.DecoratedAsset;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
@@ -36,6 +37,7 @@ public class FilterUtils {
 
         return false;
     }
+
     public static Collection<DecoratedAsset> deployableAssets(final Collection<DecoratedAsset> source) {
         return source
                 .parallelStream()
@@ -48,6 +50,27 @@ public class FilterUtils {
                 .parallelStream()
                 .map(asset -> new DecoratedAsset(cp, asset))
                 .collect(Collectors.toCollection(ArrayList::new));
+    }
+
+    public static Map<String, Component> toMapKeyIsOID(final Collection<Component> col) {
+        return col.parallelStream()
+                .collect(
+                        Collectors.toMap(o -> "", o -> (Component)o));
+    }
+    public static Collection<Component> differs(
+            final Collection<Component> sourceCol, final Collection<Component> destCol) {
+        return sourceCol
+                .parallelStream()
+                .filter(sourceComp -> {
+                    var destComp = destCol
+                            .parallelStream()
+                            .anyMatch(comp -> comp.getName().equals(sourceComp.getName()) &&
+                                    comp.getGroup().equals(sourceComp.getGroup()) &&
+                                    comp.getVersion().equals(sourceComp.getVersion()));
+
+                    // TODO BETTER EQUALS FOR REDEPLOY
+                    return false;
+                }).collect(Collectors.toList());
     }
 
     private FilterUtils() {}

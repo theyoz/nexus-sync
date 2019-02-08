@@ -125,9 +125,10 @@ public class NexusService implements NexusRepositoryApi {
                     res.getItems().addAll(page.getItems());
                 }
 
-                if (res.getItems().size() >= 10) {
-                    break;
-                }
+                LOG.info(
+                        String.format(
+                                "%d components retrieved from %s",
+                                res.getItems().size(), node.getUrlConfig().prefixUrl()));
             } while (page.getContinuationToken() != null);
 
             return res;
@@ -159,17 +160,26 @@ public class NexusService implements NexusRepositoryApi {
                     .addPart("maven2.version", new StringBody(component.getVersion(), ContentType.TEXT_PLAIN))
                     .setBoundary(boundary);
 
-            int count = 0;
+            var count = 0;
+            final var files = new ArrayList<File>();
             for (DecoratedAsset asset: FilterUtils.toDecoratedAssetCollection(component, component.getAssets())) {
                 count++;
 
-                String downloadUrl = asset.getDownloadUrl();
-                byte[] data = HttpUtils.getAsByteArray(downloadUrl, source.getCredentials());
+                final var downloadUrl = asset.getDownloadUrl();
+                final var filename = new File(new URL(downloadUrl).getFile()).getName();
+                final var data = HttpUtils.getAsFile(downloadUrl, source.getCredentials());
+
+                if (LOG.isDebugEnabled()) {
+                    LOG.debug(String.format("Artifact for %s downloaded as %s", downloadUrl, data.getAbsolutePath()));
+                }
+
+                files.add(data);
+                data.deleteOnExit();
 
                 entityBuilder = entityBuilder
                         .addPart(
                                 "maven2.asset" + count,
-                                new ByteArrayBody(data, new File(new URL(downloadUrl).getFile()).getName()));
+                                new FileBody(data, ContentType.APPLICATION_OCTET_STREAM, filename));
 
                 if (asset.getExtension() != null) {
                     entityBuilder = entityBuilder
@@ -204,13 +214,22 @@ public class NexusService implements NexusRepositoryApi {
                     "%s/service/rest/v1/components?repository=%s",
                     dest.getUrlConfig().prefixUrl(), dest.getUrlConfig().getRepository());
 
-            final var baos = new ByteArrayOutputStream();
-            entity.writeTo(baos);
+            final var tmp = File.createTempFile("NexusService", ".send");
+
+            try (final OutputStream out = new FileOutputStream(tmp)) {
+                entity.writeTo(out);
+            }
+
+            if (LOG.isDebugEnabled()) {
+                LOG.debug(String.format("Entity before posting stored at %s", tmp.getAbsolutePath()));
+            }
+
+            files.add(tmp);
 
             var digest = dest.getCredentials().getBasicAuthenticationDigest();
             var builder = HttpRequest.newBuilder().uri(URI.create(url))
                     .timeout(Duration.ofMinutes(1))
-                    .POST(HttpRequest.BodyPublishers.ofInputStream(() -> new ByteArrayInputStream(baos.toByteArray())))
+                    .POST(HttpRequest.BodyPublishers.ofFile(tmp.toPath()))
                     .header("Content-Type", ContentType.MULTIPART_FORM_DATA.getMimeType() + "; boundary=" + boundary);
 
             if (digest != null) {
@@ -221,7 +240,15 @@ public class NexusService implements NexusRepositoryApi {
 
             HttpResponse.BodyHandler<String> asString = HttpResponse.BodyHandlers.ofString();
 
+            if (LOG.isDebugEnabled()) {
+                LOG.debug(String.format("Uploading %s", url));
+            }
+
             var httpResponse2 = client.send(httpRequest, asString);
+
+            if (LOG.isDebugEnabled()) {
+                LOG.debug(String.format("Uploaded %s", url));
+            }
 
             if (httpResponse2.statusCode() < 200 || httpResponse2.statusCode() >= 300) {
                 // 400
@@ -238,6 +265,12 @@ public class NexusService implements NexusRepositoryApi {
                         httpResponse2.body(),
                         httpResponse2.statusCode());
             }
+
+            files.parallelStream().forEach(file -> {
+                if (!file.delete() && LOG.isDebugEnabled()) {
+                    LOG.warn(String.format("Could not delete temporary file %s.", file.getAbsolutePath()));
+                }
+            });
         } catch (ReplicatorException e) {
             throw e;
         } catch (Throwable t) {

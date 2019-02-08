@@ -101,7 +101,12 @@ public class Replicator {
         NexusRepositoryApi api = NexusRepositoryFactory.getInstance();
         var res = api.getAllComponents(config.getSource());
 
+        int count = 1;
         for (Component c: res.getItems()) {
+            if (LOG.isDebugEnabled()) {
+                LOG.debug(String.format("Uploading component %d/%d", count++, res.getItems().size()));
+            }
+
             api.upload(config.getSource(), config.getDest(), c);
         }
 
